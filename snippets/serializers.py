@@ -50,7 +50,7 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
         instance.save()
         return instance
     
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     snippets = serializers.PrimaryKeyRelatedField(many = True, queryset= Snippet.objects.all())
 
 
